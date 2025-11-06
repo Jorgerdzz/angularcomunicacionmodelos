@@ -13,7 +13,7 @@ export class PadreDeportesComponent {
   public mensaje: string;
 
   constructor(){
-    this.deportes = ['Futbol', 'Baloncesto', 'Tenis', 'Padel'];
+    this.deportes = ['Futbol', 'Baloncesto', 'Tenis', 'Padel', "Natación", "Beisbol"];
     this.mensaje = "";
   }
 
