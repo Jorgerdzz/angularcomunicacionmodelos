@@ -1,1 +1,22 @@
-<p>comic.component works!</p>
+<div class="comic-card">
+  <div class="card-image-container">
+    <img src="{{ comic.imagen }}" alt="{{ comic.titulo }}" class="comic-imagen" />
+    <div class="image-overlay">
+      <span class="view-details">Ver detalles</span>
+    </div>
+  </div>
+  <div class="card-content">
+    <h2 class="comic-titulo">{{ comic.titulo }}</h2>
+    <p class="comic-descripcion">{{ comic.descripcion }}</p>
+    <div class="card-actions">
+      <button class="btn-favorito" (click)="seleccionarFavorito()">
+        <span class="btn-icon">⭐</span>
+        <span>Favorito</span>
+      </button>
+      <button class="btn-eliminar" (click)="eliminarComic()">
+        <span class="btn-icon">🗑️</span>
+        <span>Eliminar</span>
+      </button>
+    </div>
+  </div>
+</div>

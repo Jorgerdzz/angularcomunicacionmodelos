@@ -8,7 +8,9 @@ import { Comic } from '../../models/Comic';
   styleUrl: './comics.component.css',
 })
 export class ComicsComponent {
-  public comics: Array<Comic>
+  public comics: Array<Comic>;
+  public favorito!: Comic;
+  public comic: Comic;
 
   constructor(){
     this.comics = new Array<Comic>();
@@ -38,7 +40,24 @@ export class ComicsComponent {
       "https://i.pinimg.com/originals/e1/d8/ff/e1d8ff4aeab5e567798635008fe98ee1.png",
       "Todd MacFarlane"
       )
-    ]; 
+    ];
+    this.comic={
+      titulo: "",
+      imagen: "",
+      descripcion: ""
+    }
+  }
+
+  seleccionarFavorito(event: any): void{
+    this.favorito = event;
+  }
+
+  eliminarComic(event: any): void{
+    this.comics.splice(event,1);
+  }
+
+  crearComic(): void{
+    this.comics.push(this.comic);
   }
 
 }

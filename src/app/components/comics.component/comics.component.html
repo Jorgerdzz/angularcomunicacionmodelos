@@ -1,1 +1,95 @@
-<p>comics.component works!</p>
+<div class="comics-container">
+  <div class="header-section">
+    <h1 class="main-title">
+      <span class="title-icon">📚</span>
+      Librería de Comics
+      <span class="title-icon">📚</span>
+    </h1>
+    <p class="subtitle">Gestiona tu colección de comics favoritos</p>
+  </div>
+
+  <div class="create-comic-section">
+    <h2 class="section-title">
+      <span class="section-icon">✨</span>
+      Crear Nuevo Comic
+    </h2>
+    <form #comicForm="ngForm" (ngSubmit)="crearComic()" class="comic-form">
+      <div class="form-group">
+        <label class="form-label">Título:</label>
+        <input
+          type="text"
+          name="cajatitulo"
+          #cajatitulo="ngModel"
+          [(ngModel)]="comic.titulo"
+          class="form-input"
+          placeholder="Ingresa el título del comic"
+        />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Imagen URL:</label>
+        <input
+          type="text"
+          name="cajaimagen"
+          #cajaimagen="ngModel"
+          [(ngModel)]="comic.imagen"
+          class="form-input"
+          placeholder="URL de la imagen"
+        />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Descripción:</label>
+        <input
+          type="text"
+          name="cajadescripcion"
+          #cajadescripcion="ngModel"
+          [(ngModel)]="comic.descripcion"
+          class="form-input"
+          placeholder="Describe tu comic"
+        />
+      </div>
+      <button class="btn-crear">
+        <span>Crear Comic</span>
+        <span class="btn-icon">➕</span>
+      </button>
+    </form>
+  </div>
+
+  @if(favorito){
+  <div class="favorito-section">
+    <h2 class="section-title favorito-title">
+      <span class="section-icon">⭐</span>
+      Comic Favorito
+      <span class="section-icon">⭐</span>
+    </h2>
+    <div class="favorito-card">
+      <div class="favorito-image-container">
+        <img src="{{ favorito.imagen }}" alt="{{ favorito.titulo }}" class="favorito-imagen" />
+        <div class="favorito-badge">FAVORITO</div>
+      </div>
+      <div class="favorito-content">
+        <h3 class="favorito-titulo">{{ favorito.titulo }}</h3>
+        <p class="favorito-descripcion">{{ favorito.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+  }
+
+  <div class="comics-list-section">
+    <h2 class="section-title">
+      <span class="section-icon">🎭</span>
+      Mi Colección
+    </h2>
+    <ul class="comics-grid">
+      @for(comic of comics; track comic; let i = $index){
+      <li class="comic-item">
+        <app-comic
+          [comic]="comic"
+          (seleccionarFavoritoPadre)="seleccionarFavorito(comic)"
+          [idcomic]="i"
+          (eliminarComicPadre)="eliminarComic(i)"
+        ></app-comic>
+      </li>
+      }
+    </ul>
+  </div>
+</div>
