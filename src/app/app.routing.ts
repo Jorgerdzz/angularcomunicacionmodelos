@@ -4,12 +4,14 @@ import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
 import { PadreCocheComponent } from "./components/padre.coche.component/padre.coche.component";
 import { PadreDeportesComponent } from "./components/padre.deportes.component/padre.deportes.component";
+import { ComicsComponent } from "./components/comics.component/comics.component";
 
 
 const appRoutes: Routes = [
     {path: "", component: Listaproductos},
     {path: "coches", component:PadreCocheComponent},
-    {path: "deportes", component: PadreDeportesComponent}
+    {path: "deportes", component: PadreDeportesComponent},
+    {path: "libreria", component: ComicsComponent}
 ]
 
 export const appRoutingProvider: any[] = []

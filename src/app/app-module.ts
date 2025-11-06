@@ -9,6 +9,9 @@ import { HijoCocheComponent } from './components/hijo.coche.component/hijo.coche
 import { PadreCocheComponent } from './components/padre.coche.component/padre.coche.component';
 import { PadreDeportesComponent } from './components/padre.deportes.component/padre.deportes.component';
 import { HijoDeportesComponent } from './components/hijo.deportes.component/hijo.deportes.component';
+import { ComicsComponent } from './components/comics.component/comics.component';
+import { ComicComponent } from './components/comic.component/comic.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,10 +21,13 @@ import { HijoDeportesComponent } from './components/hijo.deportes.component/hijo
     HijoCocheComponent,
     PadreCocheComponent,
     PadreDeportesComponent,
-    HijoDeportesComponent
+    HijoDeportesComponent,
+    ComicsComponent,
+    ComicComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     routing
   ],
   providers: [
