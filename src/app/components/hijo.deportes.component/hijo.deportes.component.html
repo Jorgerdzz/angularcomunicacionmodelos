@@ -1,0 +1,24 @@
+<div class="deporte-card">
+    <div class="deporte-icon">
+        @if(deporte === 'Futbol') {
+            <span class="sport-emoji">⚽</span>
+        }
+        @else if(deporte === 'Baloncesto') {
+            <span class="sport-emoji">🏀</span>
+        }
+        @else if(deporte === 'Tenis') {
+            <span class="sport-emoji">🎾</span>
+        }
+        @else if(deporte === 'Padel') {
+            <span class="sport-emoji">🎾</span>
+        }
+        @else {
+            <span class="sport-emoji">🏆</span>
+        }
+    </div>
+    <h1 class="deporte-nombre">{{deporte}}</h1>
+    <button class="btn-seleccionar" (click)="seleccionarFavoritoHijo()">
+        <span class="btn-icon">⭐</span>
+        <span>Seleccionar favorito</span>
+    </button>
+</div>

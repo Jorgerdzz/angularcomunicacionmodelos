@@ -1,0 +1,23 @@
+<div class="deportes-container">
+    <div class="header-section">
+        <h1 class="page-title">
+            <span class="title-icon">🏀</span>
+            Padre deportes
+            <span class="title-icon">⚽</span>
+        </h1>
+        <div class="favorito-display">
+            <span class="favorito-label">Deporte favorito:</span>
+            <span class="favorito-value">{{mensaje || 'Ninguno seleccionado'}}</span>
+        </div>
+    </div>
+    <ul class="deportes-list">
+        @for(dep of deportes; track dep){
+            <li>
+                <app-hijo-deportes [deporte]="dep"
+                 (seleccionarFavoritoPadre)="seleccionarFavoritoPadre($event)">
+                </app-hijo-deportes>
+            </li>
+        }
+    </ul>
+    
+</div>

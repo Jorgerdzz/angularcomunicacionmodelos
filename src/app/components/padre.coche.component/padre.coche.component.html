@@ -1,0 +1,14 @@
+<div class="coches-container">
+  <div class="header-section">
+    <h2 class="page-title">
+      <span class="title-icon">🚗</span>
+      Padre coches
+      <span class="title-icon">🏁</span>
+    </h2>
+  </div>
+  <ul class="coches-list">
+    @for(coche of coches; track coche){
+    <app-hijo-coche [coche]="coche"></app-hijo-coche>
+    }
+  </ul>
+</div>

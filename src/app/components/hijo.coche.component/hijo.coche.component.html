@@ -1,0 +1,23 @@
+<li class="coche-card">
+  <div class="card-header">
+    <h1 class="coche-title">{{ coche.marca }} {{ coche.modelo }}</h1>
+  </div>
+
+  <div class="card-body">
+    @if(coche.estado){
+    <h2 class="verde status-message">
+      {{ mensaje }}
+    </h2>
+    }@else{
+    <h2 class="rojo status-message">
+      {{ mensaje }}
+    </h2>
+    }
+    <h2 class="velocidad-info">Velocidad actual {{ coche.velocidad }} km/h</h2>
+  </div>
+
+  <div class="card-actions">
+    <button class="btn btn-primary" (click)="encenderCoche()">Start/stop coche</button>
+    <button class="btn btn-secondary" (click)="acelerarCoche()">Acelerar coche</button>
+  </div>
+</li>
