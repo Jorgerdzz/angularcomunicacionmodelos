@@ -12,7 +12,7 @@ export class Listaproductos {
   public productos: Array<Producto>;
 
   constructor(){
-    this.producto = new Producto("Nike Shox R4", "", 50);
+    this.producto = new Producto("Nike Shox R4", "https://static.nike.com/a/images/t_default/f9ca85ff-5aaf-4635-a797-040d06e6880a/NIKE+SHOX+R4.png", 100);
     this.productos = new Array<Producto>();
     this.productos = [
       new Producto(
