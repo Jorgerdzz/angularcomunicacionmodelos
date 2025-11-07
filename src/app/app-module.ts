@@ -14,6 +14,7 @@ import { ComicComponent } from './components/comic.component/comic.component';
 import { FormsModule } from '@angular/forms';
 
 import { ServiceComics } from './services/service.comics';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ServiceComics } from './services/service.comics';
   providers: [
     provideBrowserGlobalErrorListeners(),
     appRoutingProvider,
-    ServiceComics
+    ServiceComics,
+    provideHttpClient()
   ],
   bootstrap: [App]
 })
