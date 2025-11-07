@@ -7,7 +7,6 @@ import { ServiceComics } from '../../services/service.comics';
   standalone: false,
   templateUrl: './comics.component.html',
   styleUrl: './comics.component.css',
-  providers: [ServiceComics]
 })
 export class ComicsComponent implements OnInit{
   public comics!: Array<Comic>;
